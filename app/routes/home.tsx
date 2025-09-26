@@ -14,7 +14,7 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  const { loadingResumes, resumes } = useGetResumes();
+  const { loadingResumes, resumes, handleDelete } = useGetResumes();
   return (
     <LayoutWarper>
       <Hero loadingResumes={loadingResumes} resumes={resumes} />
@@ -27,7 +27,7 @@ export default function Home() {
       {!loadingResumes && resumes.length > 0 && (
         <div className="resumes-section">
           {resumes.map((resume) => (
-            <ResumeCard key={resume.id} resume={resume} />
+            <ResumeCard key={resume.id} resume={resume} handleDelete={() => handleDelete(resume.id)} />
           ))}
         </div>
       )}

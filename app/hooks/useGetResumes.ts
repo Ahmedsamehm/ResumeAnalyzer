@@ -6,6 +6,10 @@ const useGetResumes = () => {
 
   const [resumes, setResumes] = useState<Resume[]>([]);
   const [loadingResumes, setLoadingResumes] = useState(false);
+  const handleDelete = async (id: string) => {
+    await kv.del(`resume:${id}`);
+    setResumes((prev) => prev.filter((resume) => resume.id !== id));
+  };
 
   useEffect(() => {
     const loadResumes = async () => {
@@ -21,7 +25,7 @@ const useGetResumes = () => {
 
     loadResumes();
   }, [kv]);
-  return { resumes, loadingResumes };
+  return { resumes, loadingResumes, handleDelete };
 };
 
 export default useGetResumes;
