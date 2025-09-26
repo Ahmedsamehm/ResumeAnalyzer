@@ -5,7 +5,7 @@ import { usePuterStore } from "~/lib/puter";
 const NavBarResume = () => {
   const { auth } = usePuterStore();
   return (
-    <nav className="resume-nav">
+    <nav className="resume-nav sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md  ">
       <Link to="/" className="back-button">
         <img src="/icons/back.svg" alt="logo" className="w-2.5 h-2.5" />
         <span className="text-gray-800 text-sm font-semibold">Back to Homepage</span>
