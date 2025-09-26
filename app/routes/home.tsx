@@ -4,9 +4,8 @@ import type { Route } from "./+types/home";
 import Hero from "~/components/LandingPage/Hero";
 
 import LayoutWarper from "~/components/LayoutWarper";
-import { usePuterStore } from "~/lib/puter";
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router";
+
+import { Link } from "react-router";
 import useGetResumes from "~/hooks/useGetResumes";
 
 export function meta({}: Route.MetaArgs) {
