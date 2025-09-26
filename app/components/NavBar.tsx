@@ -6,14 +6,14 @@ const NavBar = () => {
   return (
     <nav className="navbar">
       <Link to="/">
-        <p className="text-2xl font-bold text-gradient">Resume Analyzer</p>
+        <p className="text-lg lg:text-2xl font-bold text-gradient">Resume Analyzer</p>
       </Link>
-      <div>
-        <Link to="/upload" className="primary-button w-fit">
+      <div className="flex gap-2">
+        <Link to="/upload" className="primary-button w-[150px] lg:w-fit text-nowrap">
           Upload Resume
         </Link>
         <button onClick={auth.signOut} className="primary-button w-fit">
-          logout
+          Logout
         </button>
       </div>
     </nav>
