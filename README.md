@@ -1,5 +1,8 @@
 # 📝 AI Resume Analyzer
 
+<img width="1905" height="1158" alt="Resume Analyzer" src="https://github.com/user-attachments/assets/679b2517-89a0-46a5-af04-473193e310a5" />
+
+
 An **AI-powered Resume Analyzer** built with **React** and **Puter.js**, designed to provide ATS scores, smart feedback, and resume-job matching in a modern and reusable UI.
 
 👉 **Demo:** **Soon**
