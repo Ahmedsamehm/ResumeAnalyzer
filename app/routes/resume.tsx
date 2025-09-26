@@ -1,45 +1,14 @@
-import { Link, useParams } from "react-router";
-import { useEffect, useState } from "react";
-import { usePuterStore } from "~/lib/puter";
+import { Link } from "react-router";
+
 import Summary from "~/components/resume/Summary";
 import ATS from "~/components/resume/Ats";
 import Details from "~/components/resume/Details";
+import useLoadResume from "~/hooks/useLoadResume";
 
-export const meta = () => [{ title: "Resumind | Review " }, { name: "description", content: "Detailed overview of your resume" }];
+export const meta = () => [{ title: "Resume | Review " }, { name: "description", content: "Detailed overview of your resume" }];
 
 const Resume = () => {
-  const { auth, isLoading, fs, kv } = usePuterStore();
-  const { id } = useParams();
-  const [imageUrl, setImageUrl] = useState("");
-  const [resumeUrl, setResumeUrl] = useState("");
-  const [feedback, setFeedback] = useState<Feedback | null>(null);
-
-  useEffect(() => {
-    const loadResume = async () => {
-      const resume = await kv.get(`resume:${id}`);
-
-      if (!resume) return;
-
-      const data = JSON.parse(resume);
-
-      const resumeBlob = await fs.read(data.resumePath);
-      if (!resumeBlob) return;
-
-      const pdfBlob = new Blob([resumeBlob], { type: "application/pdf" });
-      const resumeUrl = URL.createObjectURL(pdfBlob);
-      setResumeUrl(resumeUrl);
-
-      const imageBlob = await fs.read(data.imagePath);
-      if (!imageBlob) return;
-      const imageUrl = URL.createObjectURL(imageBlob);
-      setImageUrl(imageUrl);
-
-      setFeedback(data.feedback);
-      console.log({ resumeUrl, imageUrl, feedback: data.feedback });
-    };
-
-    loadResume();
-  }, [id]);
+  const { feedback, imageUrl, resumeUrl } = useLoadResume();
 
   return (
     <main className="!pt-0">
