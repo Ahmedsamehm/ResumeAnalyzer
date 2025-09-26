@@ -1,6 +1,9 @@
-import { convertPdfToImage } from "./pdf2img";
-import { usePuterStore } from "./puter";
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
 export const formatSize = (bytes: number) => {
   if (bytes === 0) return "0 Bytes";
 
