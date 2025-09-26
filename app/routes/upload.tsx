@@ -1,4 +1,3 @@
-import LayoutWarper from "~/components/LayoutWarper";
 import NavBarResume from "~/components/resume/NavBarResume";
 import FileUploader from "~/components/upload/FileUploader";
 
@@ -14,18 +13,23 @@ const upload = () => {
   const { handleFileSelect, handleSubmit, isProcessing, statusText } = useUploadResume();
 
   return (
-    <div>
+    <div className="container mx-auto">
       <NavBarResume />
-      <div className="page-heading py-16 mx-auto w-full">
-        <h1>Smart feedback for your dream job</h1>
-        {isProcessing ? (
-          <div className="w-1/2">
-            <h1>{statusText}</h1>
-            <img src="/images/resume-scan.gif" className="w-full bg-cover  " alt="LoadingScanResume" />
-          </div>
-        ) : (
-          <h2>Drop your resume for an ATS score and improvement tips</h2>
-        )}
+      <div className="flex flex-col gap-3 lg:flex-row items-center justify-between mx-auto py-16 px-5 ">
+        <div className=" space-y-3 lg:text-start    ">
+          <h1 className="!text-4xl lg:!text-6xl  font-bold">Smart feedback for your dream job</h1>
+          {isProcessing ? (
+            <div className="flex items-center justify-center mx-auto w-full">
+              <div className=" mx-auto flex flex-col justify-center items-center gap-3  ">
+                <h1 className="!text-4xl  font-bold">{statusText}</h1>
+                <img src="/images/resume-scan.gif" className="w-1/2 bg-cover" alt="LoadingScanResume" />
+              </div>
+            </div>
+          ) : (
+            <h2 className="!text-xl text-start ">Drop your resume for an ATS score and improvement tips</h2>
+          )}
+        </div>
+
         {!isProcessing && (
           <form id="upload-form" onSubmit={handleSubmit}>
             <div className="form-div">

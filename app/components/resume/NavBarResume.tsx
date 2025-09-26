@@ -12,7 +12,7 @@ const NavBarResume = () => {
       </Link>
       <div className="flex items-center gap-2">
         <img src="/Placeholder.png" alt="avatar" className="size-10 border border-gray-400 rounded-full p-1" />
-        <span className="text-2xl">{auth.user?.username}</span>
+        <span className="text-xl">{auth.user?.username}</span>
       </div>
     </nav>
   );
