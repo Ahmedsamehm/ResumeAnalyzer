@@ -3,7 +3,7 @@ import ScoreCircle from "../ScoreCircle";
 
 import useLoadImageResume from "~/hooks/useLoadImageResume";
 
-const ResumeCard = ({ resume: { id, companyName, jobTitle, feedBack, imagePath }, handleDelete }: { resume: Resume; handleDelete: () => void }) => {
+const ResumeCard = ({ resume: { id, companyName, jobTitle, feedback, imagePath }, handleDelete }: { resume: Resume; handleDelete: () => void }) => {
   const { resumeUrl } = useLoadImageResume(imagePath);
   return (
     <div className="flex flex-col items-end">
@@ -18,7 +18,7 @@ const ResumeCard = ({ resume: { id, companyName, jobTitle, feedBack, imagePath }
             {!companyName && !jobTitle && <h2 className="!text-black font-bold">Resume</h2>}
           </div>
           <div className="flex-shrink-0">
-            <ScoreCircle score={feedBack?.ATS?.score} />
+            <ScoreCircle score={feedback?.ATS?.score} />
           </div>
         </div>
         {resumeUrl && (
