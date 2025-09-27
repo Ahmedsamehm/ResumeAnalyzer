@@ -5,7 +5,8 @@
 
 An **AI-powered Resume Analyzer** built with **React** and **Puter.js**, designed to provide ATS scores, smart feedback, and resume-job matching in a modern and reusable UI.
 
-👉 **Demo:** **Soon**
+👉 **Demo:** [demo](https://resumetric-ai.vercel.app/)
+
 
 ---
 
