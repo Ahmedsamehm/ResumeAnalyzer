@@ -11,8 +11,6 @@ export const meta = () => [{ title: "Resume | Review " }, { name: "description",
 const Resume = () => {
   const { feedback, imageUrl, resumeUrl } = useLoadResume();
 
-  console.log(feedback);
-
   return (
     <main className="!pt-0">
       <NavBarResume />

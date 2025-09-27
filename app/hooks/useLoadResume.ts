@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router";
+import { useParams } from "react-router";
 import { usePuterStore } from "~/lib/puter";
 
 const useLoadResume = () => {
-  const { auth, isLoading, fs, kv } = usePuterStore();
+  const { fs, kv } = usePuterStore();
   const { id } = useParams();
   const [imageUrl, setImageUrl] = useState("");
   const [resumeUrl, setResumeUrl] = useState("");
@@ -29,8 +29,6 @@ const useLoadResume = () => {
     setImageUrl(imageUrl);
 
     setFeedback(data.feedback);
-
-    console.log({ resumeUrl, imageUrl, feedback });
   };
   useEffect(() => {
     loadResume();
