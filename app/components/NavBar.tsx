@@ -6,7 +6,7 @@ const NavBar = () => {
   return (
     <nav className="navbar">
       <Link to="/">
-        <p className="text-lg lg:text-2xl font-bold text-gradient">Resume Analyzer</p>
+        <p className="text-lg lg:text-2xl font-bold text-gradient">Resumetric</p>
       </Link>
       <div className="flex gap-2">
         <Link to="/upload" className="primary-button w-[150px] lg:w-fit text-nowrap">
