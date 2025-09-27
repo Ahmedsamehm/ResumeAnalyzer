@@ -21,7 +21,7 @@ const upload = () => {
           {isProcessing ? (
             <div className="flex items-center justify-center mx-auto w-full">
               <div className=" mx-auto flex flex-col justify-center items-center gap-3  ">
-                <h1 className="!text-4xl  font-bold">{statusText}</h1>
+                <h1 className="!text-xl text-center  lg:!text-3xl font-bold">{statusText}</h1>
                 <img src="/images/resume-scan.gif" className="w-1/2 bg-cover" alt="LoadingScanResume" />
               </div>
             </div>
