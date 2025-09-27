@@ -28,9 +28,9 @@ const useLoadResume = () => {
     const imageUrl = URL.createObjectURL(imageBlob);
     setImageUrl(imageUrl);
 
-    setFeedback(data.feedBack);
+    setFeedback(data.feedback);
 
-    console.log({ resumeUrl, imageUrl, feedback: data.feedBack });
+    console.log({ resumeUrl, imageUrl, feedback });
   };
   useEffect(() => {
     loadResume();

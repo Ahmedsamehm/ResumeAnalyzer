@@ -83,7 +83,11 @@ Steps:
 
     setStatusText("Analyzing...");
 
+    setTimeout(() => {
+      setStatusText(" This may take a while. If it takes too long, try reloading or signing in with a different account.");
+    }, 4000);
     const feedback = await ai.feedback(uploadedFile.path, prepareInstructions({ jobTitle, jobDescription } as any));
+
     if (!feedback) return setStatusText("Error: Failed to analyze resume");
 
     const feedbackText = typeof feedback.message.content === "string" ? feedback.message.content : feedback.message.content[0].text;

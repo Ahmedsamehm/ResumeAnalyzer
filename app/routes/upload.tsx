@@ -13,11 +13,11 @@ const upload = () => {
   const { handleFileSelect, handleSubmit, isProcessing, statusText } = useUploadResume();
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto w-full">
       <NavBarResume />
-      <div className="flex flex-col gap-3 lg:flex-row items-center justify-between mx-auto py-16 px-5 ">
+      <div className="flex flex-col gap-3 lg:flex-row items-center justify-center mx-auto py-16 px-5 ">
         <div className=" space-y-3 lg:text-start    ">
-          <h1 className="!text-4xl lg:!text-6xl  font-bold">Smart feedback for your dream job</h1>
+          <h1 className={`!text-4xl lg:!text-6xl  font-bold ${isProcessing ? "text-center" : "text-start"} `}>Smart feedback for your dream job</h1>
           {isProcessing ? (
             <div className="flex items-center justify-center mx-auto w-full">
               <div className=" mx-auto flex flex-col justify-center items-center gap-3  ">
