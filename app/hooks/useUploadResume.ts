@@ -92,7 +92,12 @@ Steps:
 
     const feedbackText = typeof feedback.message.content === "string" ? feedback.message.content : feedback.message.content[0].text;
 
-    data.feedback = JSON.parse(feedbackText);
+    try {
+      data.feedback = JSON.parse(feedbackText);
+    } catch (error) {
+      console.error("Failed to parse feedback JSON:", error);
+      data.feedback = feedbackText;
+    }
     await kv.set(`resume:${uuid}`, JSON.stringify(data));
     setStatusText("Analysis complete, redirecting...");
 

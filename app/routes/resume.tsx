@@ -5,11 +5,14 @@ import ATS from "~/components/resume/Ats";
 import Details from "~/components/resume/Details";
 import useLoadResume from "~/hooks/useLoadResume";
 import NavBarResume from "~/components/resume/NavBarResume";
+import ResumeFeedback from "~/components/resume/ResumeFeedback";
 
 export const meta = () => [{ title: "Resume | Review " }, { name: "description", content: "Detailed overview of your resume" }];
 
 const Resume = () => {
   const { feedback, imageUrl, resumeUrl } = useLoadResume();
+
+  console.log(feedback);
 
   return (
     <main className="!pt-0">
@@ -29,8 +32,9 @@ const Resume = () => {
           {feedback ? (
             <div className="flex flex-col gap-8 animate-in fade-in duration-1000">
               <Summary feedback={feedback} />
-              <ATS score={feedback.ATS.score || 0} suggestions={feedback.ATS.tips || []} />
+              <ATS score={feedback?.sections?.ATS?.score || 0} suggestions={feedback?.sections?.ATS?.tips || []} />
               <Details feedback={feedback} />
+              <ResumeFeedback feedback={feedback} />
             </div>
           ) : (
             <img src="/images/resume-scan-2.gif" className="w-full" />
