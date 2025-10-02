@@ -15,12 +15,12 @@ const upload = () => {
   return (
     <div className="container mx-auto w-full">
       <NavBarResume />
-      <div className="flex flex-col gap-3 lg:flex-row items-center justify-center mx-auto py-16 px-5 ">
-        <div className=" space-y-3 lg:text-start    ">
+      <div className="flex flex-col gap-3 lg:flex-row items-center justify-center mx-auto py-16 px-8 w-full">
+        <div className=" space-y-3 lg:text-start w-full">
           <h1 className={`!text-4xl lg:!text-6xl  font-bold ${isProcessing ? "text-center" : "text-start"} `}>Smart feedback for your dream job</h1>
           {isProcessing ? (
             <div className="flex items-center justify-center mx-auto w-full">
-              <div className=" mx-auto flex flex-col justify-center items-center gap-3  ">
+              <div className=" mx-auto flex flex-col justify-center items-center gap-3  w-full">
                 <h1 className="!text-xl text-center  lg:!text-3xl font-bold">{statusText}</h1>
                 <img src="/images/resume-scan.gif" className="w-1/2 bg-cover" alt="LoadingScanResume" />
               </div>
