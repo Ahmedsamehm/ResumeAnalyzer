@@ -12,7 +12,8 @@ const useUploadResume = () => {
   const [file, setFile] = useState<File | null>(null);
   const navigate = useNavigate();
   const handleFileSelect = (file: File | null) => {
-    setFile(file);
+    if (file) setFile(file);
+    else setFile(null);
   };
 
   /*
@@ -118,7 +119,7 @@ Steps:
 
     handleAnalyze({ companyName, jobTitle, jobDescription, file });
   };
-  return { handleFileSelect, handleSubmit, isProcessing, statusText };
+  return { handleFileSelect, handleSubmit, isProcessing, statusText, setFile };
 };
 
 export default useUploadResume;
