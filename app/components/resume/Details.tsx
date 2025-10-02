@@ -66,34 +66,34 @@ const Details = ({ feedback }: { feedback: Feedback }) => {
       <Accordion>
         <AccordionItem id="tone-style">
           <AccordionHeader itemId="tone-style">
-            <CategoryHeader title="Tone & Style" categoryScore={feedback.sections?.toneAndStyle.score} />
+            <CategoryHeader title="Tone & Style" categoryScore={feedback.toneAndStyle.score} />
           </AccordionHeader>
           <AccordionContent itemId="tone-style">
-            <CategoryContent tips={feedback.sections?.toneAndStyle.tips} />
+            <CategoryContent tips={feedback.toneAndStyle.tips} />
           </AccordionContent>
         </AccordionItem>
         <AccordionItem id="content">
           <AccordionHeader itemId="content">
-            <CategoryHeader title="Content" categoryScore={feedback.sections?.content.score} />
+            <CategoryHeader title="Content" categoryScore={feedback.content.score} />
           </AccordionHeader>
           <AccordionContent itemId="content">
-            <CategoryContent tips={feedback.sections?.content.tips} />
+            <CategoryContent tips={feedback.content.tips} />
           </AccordionContent>
         </AccordionItem>
         <AccordionItem id="structure">
           <AccordionHeader itemId="structure">
-            <CategoryHeader title="Structure" categoryScore={feedback.sections?.structure.score} />
+            <CategoryHeader title="Structure" categoryScore={feedback.structure.score} />
           </AccordionHeader>
           <AccordionContent itemId="structure">
-            <CategoryContent tips={feedback.sections?.structure.tips} />
+            <CategoryContent tips={feedback.structure.tips} />
           </AccordionContent>
         </AccordionItem>
         <AccordionItem id="skills">
           <AccordionHeader itemId="skills">
-            <CategoryHeader title="Skills" categoryScore={feedback.sections?.skills.score} />
+            <CategoryHeader title="Skills" categoryScore={feedback.skills.score} />
           </AccordionHeader>
           <AccordionContent itemId="skills">
-            <CategoryContent tips={feedback.sections?.skills.tips} />
+            <CategoryContent tips={feedback.skills.tips} />
           </AccordionContent>
           {feedback.summary && (
             <AccordionItem id="ResumeFeedback">

@@ -84,7 +84,7 @@ Steps:
     setStatusText("Analyzing...");
 
     setTimeout(() => {
-      setStatusText(" This may take a while. If it takes too long, try reloading or signing in with a different account.");
+      setStatusText(" This might take a bit. If it feels stuck, try refreshing or signing in with another account.");
     }, 4000);
     const feedback = await ai.feedback(uploadedFile.path, prepareInstructions({ jobTitle, jobDescription } as any));
 
